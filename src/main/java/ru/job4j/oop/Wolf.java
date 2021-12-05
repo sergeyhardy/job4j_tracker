@@ -1,7 +1,7 @@
 package ru.job4j.oop;
 
 public class Wolf {
-    public static void tryEat() {
-        Ball.tryRun(false);
+    public void tryEat(Ball ball) {
+        ball.tryRun(false);
     }
 }
