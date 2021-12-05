@@ -11,8 +11,6 @@ public class PointTest {
         Point d = new Point(4, 5, 6);
         double dist3d = c.distance3d(d);
         double expected = 5.20;
-        double scale = Math.pow(10, 2);
-        dist3d = Math.ceil(dist3d * scale) / scale;
         Assert.assertEquals(expected, dist3d, 0.01);
     }
 
@@ -22,8 +20,6 @@ public class PointTest {
         Point d = new Point(9, 7, 3);
         double dist3d = c.distance3d(d);
         double expected = 7.28;
-        double scale = Math.pow(10, 2);
-        dist3d = Math.ceil(dist3d * scale) / scale;
         Assert.assertEquals(expected, dist3d, 0.01);
     }
 }
