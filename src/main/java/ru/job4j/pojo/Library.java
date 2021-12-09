@@ -11,17 +11,21 @@ public class Library {
         books[1] = second;
         books[2] = third;
         books[3] = fourth;
+
         for (int i = 0; i < books.length; i++) {
             Book y = books[i];
             System.out.println(y.getName() + " - " + y.getPageCount());
         }
+
         Book tmp = books[0];
         books[0] = books[3];
         books[3] = tmp;
+
         for (int i = 0; i < books.length; i++) {
             Book y = books[i];
             System.out.println(y.getName() + " - " + y.getPageCount());
         }
+
         for (int i = 0; i < books.length; i++) {
             Book y = books[i];
             if ("Clean code".equals(y.getName())) {
