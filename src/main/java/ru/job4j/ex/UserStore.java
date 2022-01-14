@@ -7,6 +7,7 @@ public class UserStore {
         for (User user : users) {
             if (user.getUsername().equals(login)) {
                 rsl = user;
+                break;
             }
         }
         if (rsl == null) {
@@ -20,23 +21,23 @@ public class UserStore {
         if (!user.isValid() || userName.length() < 3) {
             throw new UserInvalidException("This user does not have access");
         }
-        return user.isValid();
+        return true;
     }
 
     public static void main(String[] args) {
         User[] users = {
                 new User("Petr Arsentev", true)
         };
-        User user = null;
         try {
+            User user = null;
             user = findUser(users, "Petr Arsentev");
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
-        } catch (UserInvalidException u) {
-            System.out.println("This user does not have access");
-        } catch (UserNotFoundException e) {
-            System.out.println("This user was not found");
+        } catch (UserInvalidException uia) {
+            uia.printStackTrace();
+        } catch (UserNotFoundException unfe) {
+            unfe.printStackTrace();
 
         }
     }
