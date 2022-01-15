@@ -29,8 +29,7 @@ public class UserStore {
                 new User("Petr Arsentev", true)
         };
         try {
-            User user = null;
-            user = findUser(users, "Petr Arsentev");
+            User user = findUser(users, "Petr Arsentev");
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
