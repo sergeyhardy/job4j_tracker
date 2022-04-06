@@ -33,16 +33,16 @@ public class Tracker {
         List<Item> rsl = new ArrayList<>();
         int counter = 0;
 
-        for (int index = 0; index < items.size(); index++) {
-            if (items.get(index).getName().equals(key)) {
-                rsl.add(counter++, items.get(index));
+        for (Item item : items) {
+            if (item.getName().equals(key)) {
+                rsl.add(counter++, item);
             }
         }
         return rsl;
     }
 
     public List<Item> findAll() {
-        return items;
+        return List.copyOf(items);
     }
 
     public boolean replace(int id, Item item) {
@@ -50,8 +50,7 @@ public class Tracker {
         boolean rsl = index != -1;
         if (rsl) {
             item.setId(id);
-            items.remove(index);
-            items.add(index, item);
+            items.set(index, item);
         }
         return rsl;
     }
