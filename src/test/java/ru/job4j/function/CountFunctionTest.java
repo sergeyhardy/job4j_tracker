@@ -23,8 +23,8 @@ public class CountFunctionTest {
 
     @Test
     public void whenExponentialFunctionThenExponentialResults() {
-        List<Double> result = CountFunction.diapason(5, 8, x -> Math.pow(x, 2D));
-        List<Double> expected = Arrays.asList(25D, 36D, 49D);
+        List<Double> result = CountFunction.diapason(5, 8, x -> Math.pow(2D, x));
+        List<Double> expected = Arrays.asList(32D, 64D, 128D);
         assertThat(result, is(expected));
     }
 }
